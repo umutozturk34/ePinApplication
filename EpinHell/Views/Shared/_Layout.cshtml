@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EpinHell</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; 
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .navbar {
+            background-color: #f1f3f5;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-left: 80px;
+        }
+
+        .navbar-brand img {
+            width: 120px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .premium-btn {
+            background: linear-gradient(145deg, #4e73df, #224abe);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -2px -2px 8px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(145deg, #224abe, #4e73df);
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), -4px -4px 15px rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .premium-btn:focus {
+            outline: none;
+        }
+
+        .nav-item {
+            margin-right: 15px;
+        }
+
+        .nav-item .premium-btn {
+            border-radius: 50px;
+            padding: 12px 25px;
+        }
+
+        footer {
+            background-color: #f1f3f5;
+            color: #333;
+            padding: 0.8rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer p {
+            margin-bottom: 0;
+            color: #000;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        footer .social-icons a:hover {
+            color: #0d6efd;
+        }
+
+        .footer-creators {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 0rem;
+        }
+
+        .creator-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 0.2rem 1rem;
+            width: 150px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .footer-creators a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer-creators a:hover {
+            color: #bc0000;
+        }
+
+        .footer-creators .creator-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .creator-card h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .creator-card p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .creator-card p.number {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .alert {
+            border-radius: 0.5rem;
+        }
+
+        .nav-link {
+            color: #000;
+        }
+
+        .nav-link:hover {
+            color: #0056b3;
+        }
+
+        .banner {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner-content {
+            width: 100%;
+        }
+
+        .banner-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="~/images/logo.png?v=1" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn premium-btn" href="/">Home</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Show authenticated navigation items -->
+                            <li class="nav-item">
+                                <a class="btn premium-btn" href="/Product/Index">Buy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn premium-btn" href="/Cart/ViewCart">View Cart</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Logout form for authenticated users -->
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken() <!-- Anti-forgery token for security -->
+                                    <button type="submit" class="btn premium-btn">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Show login and register options for unauthenticated users -->
+                            <li class="nav-item">
+                                <a class="btn premium-btn" href="/Account/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn premium-btn" href="/Account/Register">Register</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        @RenderBody() <!-- Main content area where other views will be rendered -->
+    </main>
+
+    <footer>
+        <div class="footer-creators">
+            <a href="https://www.instagram.com/ukbeyy" class="creator-card" target="_blank">
+                <h5>Ukbe Taha ŞAHİNKAYA</h5>
+                <p class="number">B211202551</p>
+            </a>
+            <a href="https://www.instagram.com/uttolian23" class="creator-card" target="_blank">
+                <h5>Mustafa Umut ÖZTÜRK</h5>
+                <p class="number">B221202039</p> 
+            </a>
+            <a href="https://www.instagram.com/alpern.kra" class="creator-card" target="_blank">
+                <h5>Alperen KARA</h5>
+                <p class="number">B221202057</p> 
+            </a>
+            <a href="https://www.instagram.com/alpermeyenn" class="creator-card" target="_blank">
+                <h5>Alperen ÖGKE</h5>
+                <p class="number">B221202074</p> 
+            </a>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.js"></script>
+</body>
+</html>

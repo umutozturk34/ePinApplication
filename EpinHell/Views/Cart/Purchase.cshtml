@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Purchase"; // Sets the page title to "Purchase"
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Thank you for your purchase!</h2> 
+    <p>Your order has been placed successfully.</p> 
+    <a class="btn btn-primary" href="@Url.Action("ViewCart", "Cart")">Go to Cart</a> <!-- Button to redirect user to the cart -->
+</div>

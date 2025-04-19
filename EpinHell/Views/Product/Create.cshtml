@@ -1,0 +1,53 @@
+﻿@model EpinHell.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";// Sets the page title to "Create Product"
+}
+
+<h2 class="text-center mb-4">Create Product</h2>
+
+<form method="post">
+    <div class="row g-3">
+        <!-- Product Name -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Product Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Price -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Price" class="form-label">Price</label>
+                <input asp-for="Price" class="form-control" placeholder="Enter price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter product description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Image URL -->
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="form-label">Product Image URL</label>
+                <input asp-for="ImageUrl" class="form-control" placeholder="Enter image URL" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12">
+            <button type="submit" class="btn btn-success w-100">Create Product</button>
+        </div>
+    </div>
+</form>
+

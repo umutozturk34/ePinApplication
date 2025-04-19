@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "OY+co3mfKrFAy6R1nHanPqJIQcDIw7ilJuduXmY+fRw=",
+  "Source": "EpinHell",
+  "BasePath": "_content/EpinHell",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EpinHell\\wwwroot",
+      "Source": "EpinHell",
+      "ContentRoot": "C:\\Users\\Ukbe Taha\\Desktop\\WebProgramming\\EpinHell\\wwwroot\\",
+      "BasePath": "_content/EpinHell",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Ukbe Taha\\Desktop\\WebProgramming\\EpinHell\\wwwroot\\images\\banner.png",
+      "SourceId": "EpinHell",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ukbe Taha\\Desktop\\WebProgramming\\EpinHell\\wwwroot\\",
+      "BasePath": "_content/EpinHell",
+      "RelativePath": "images/banner.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\banner.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ukbe Taha\\Desktop\\WebProgramming\\EpinHell\\wwwroot\\images\\logo.png",
+      "SourceId": "EpinHell",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ukbe Taha\\Desktop\\WebProgramming\\EpinHell\\wwwroot\\",
+      "BasePath": "_content/EpinHell",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
+    }
+  ]
+}
