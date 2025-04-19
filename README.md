@@ -1,0 +1,1 @@
+This is a web application built with ASP.NET Core, featuring full CRUD operations, user authentication, and role management using Entity Framework Core and ASP.NET Identity. The application differentiates between Admin and User roles and includes a dynamic layout that adapts to different user roles.
