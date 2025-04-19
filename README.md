@@ -1,31 +1,30 @@
 # ePin Application (ASP.NET Core MVC)
 
-This project is an MVC-based ePin application developed using ASP.NET Core. The system allows users to register, manage, and process electronic pins (ePins) securely. It demonstrates the use of MVC architecture and follows best practices for secure user management and data handling.
+This project is an ePin application developed using ASP.NET Core MVC. It allows users to securely register, authenticate, and manage ePins. The system uses **ASP.NET Core Identity** for authentication, **Entity Framework Core** for database access, and supports **migration** for handling schema changes.
 
 ## 🏷️ Features
 
-- **User Registration & Authentication**: Secure login and registration with user-specific ePin management.
-- **Pin Generation**: Create, manage, and distribute ePins for use in various systems.
-- **Admin Dashboard**: Admin users can oversee and manage ePin usage.
-- **Security**: Implementation of hashing, salting, and other security measures.
-- **MVC Architecture**: Separation of concerns with Controllers, Views, and Models.
-  
+- **User Authentication**: Secure login and registration system with **ASP.NET Core Identity**.
+- **ePin Management**: Admins can generate, distribute, and manage ePins.
+- **Admin Dashboard**: View and manage all ePin-related activities.
+- **MVC Architecture**: Utilizes the Model-View-Controller (MVC) pattern for separation of concerns.
+- **Database Migration**: Schema changes are handled using **Entity Framework Core** migrations.
+
 ## 🧠 Concepts Demonstrated
 
-- ✅ Model-View-Controller (MVC) architecture
-- ✅ User authentication and role-based authorization
-- ✅ ePin generation logic
-- ✅ Secure password hashing and user validation
-- ✅ Data storage with Entity Framework Core
-- ✅ Using Razor views for dynamic content rendering
+- ✅ User authentication using **ASP.NET Core Identity**.
+- ✅ ePin generation and management logic.
+- ✅ **Entity Framework Core** for database management.
+- ✅ **Database migrations** with EF Core.
+- ✅ MVC architecture and Razor Views.
 
 ## 🛠️ Technologies Used
 
-- **ASP.NET Core 5.0+** (MVC)
-- **Entity Framework Core** (for database access)
-- **SQL Server** (or any relational DB for storage)
+- **ASP.NET Core MVC**
+- **Entity Framework Core** (for database access and migrations)
+- **SQL Server** (or any relational database)
+- **ASP.NET Core Identity** (for authentication)
 - **Razor Pages** (for dynamic views)
-- **Identity Framework** (for user authentication)
 
 ## 🚀 How to Run
 
